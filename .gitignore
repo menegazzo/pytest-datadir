@@ -1,0 +1,6 @@
+.cache/
+*.egg-info/
+.coverage
+.project
+.pydevproject
+*.pyc

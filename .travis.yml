@@ -1,0 +1,13 @@
+sudo: false
+language: python
+python:
+- "2.7"
+- "3.4"
+install:
+- pip install -U pytest
+- pip install -U coveralls
+script:
+- python setup.py develop
+- coverage run --append --source=pytest_datadir.py -m pytest ./_tests/test_datadir.py
+after_success:
+- coveralls

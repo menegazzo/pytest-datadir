@@ -4,7 +4,7 @@ import pytest
 
 
 @pytest.fixture
-def datadir(tmpdir, request):
+def stash(tmpdir, request):
     '''
     Fixture responsible for searching a folder with the same name of test
     module and, if available, moving all contents to a temporary directory so

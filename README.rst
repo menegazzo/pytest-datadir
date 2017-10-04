@@ -1,25 +1,25 @@
 .. _pytest: http://pytest.org
 
-.. |python| image:: https://img.shields.io/pypi/pyversions/pytest-datadir.svg
-  :target: https://pypi.python.org/pypi/pytest-datadir/
+.. |python| image:: https://img.shields.io/pypi/pyversions/pytest-stash.svg
+  :target: https://pypi.python.org/pypi/pytest-stash/
 
-.. |version| image:: http://img.shields.io/pypi/v/pytest-datadir.svg
-  :target: https://pypi.python.org/pypi/pytest-datadir
+.. |version| image:: http://img.shields.io/pypi/v/pytest-stash.svg
+  :target: https://pypi.python.org/pypi/pytest-stash
   
-.. |downloads| image:: http://img.shields.io/pypi/dm/pytest-datadir.svg
-  :target: https://pypi.python.org/pypi/pytest-datadir
+.. |downloads| image:: http://img.shields.io/pypi/dm/pytest-stash.svg
+  :target: https://pypi.python.org/pypi/pytest-stash
   
-.. |travis| image:: https://img.shields.io/travis/menegazzo/pytest-datadir/master.svg
-  :target: https://travis-ci.org/menegazzo/pytest-datadir
+.. |travis| image:: https://img.shields.io/travis/menegazzo/pytest-stash/master.svg
+  :target: https://travis-ci.org/menegazzo/pytest-stash
 
-.. |coverage| image:: http://img.shields.io/coveralls/menegazzo/pytest-datadir.svg
-  :target: https://coveralls.io/r/menegazzo/pytest-datadir
+.. |coverage| image:: http://img.shields.io/coveralls/menegazzo/pytest-stash.svg
+  :target: https://coveralls.io/r/menegazzo/pytest-stash
 
-==============
-pytest-datadir
-==============
+============
+pytest-stash
+============
 
-pytest-datadir is a `pytest`_ plugin that allows programmers to add auxiliary
+pytest-stash is a `pytest`_ plugin that allows programmers to add auxiliary
 files (such as expected results, configuration files, and others) to tests.
 
 It works over `tmpdir` fixture by copying the auxiliary files to the temporary
@@ -42,16 +42,16 @@ Create a folder with the same name as your test module and add all necessary fil
       - bravo.yaml
     - test_foo.py
 
-Then use `datadir` fixture just like `tmpdir`.
+Then use `stash` fixture just like `tmpdir`.
 
 .. code-block:: python
 
-    def test_foo(datadir):
-        assert datadir.join('foo.bar').isfile() is True
-        assert datadir.join('alpha.json').isfile() is True
-        assert datadir.join('bravo.yaml').isfile() is True
+    def test_foo(stash):
+        assert stash.join('foo.bar').isfile() is True
+        assert stash.join('alpha.json').isfile() is True
+        assert stash.join('bravo.yaml').isfile() is True
         
-        new_filename = datadir.join('new.filename')
+        new_filename = stash.join('new.filename')
         assert new_filename.isfile() is False
         
         new_filename.ensure()
@@ -62,14 +62,14 @@ Releases
 
 Please consult the `releases page`_.
 
-.. _releases page: https://github.com/menegazzo/pytest-datadir/releases
+.. _releases page: https://github.com/menegazzo/pytest-stash/releases
 
 Bugs/Requests
 =============
 
 Please report any issues or feature requests in the `issue tracker`_.
 
-.. _issue tracker: https://github.com/menegazzo/pytest-datadir/issues
+.. _issue tracker: https://github.com/menegazzo/pytest-stash/issues
 
 Contributing
 ============
